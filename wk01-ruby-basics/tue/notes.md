@@ -1,0 +1,162 @@
+# Good Morning!
+
+<img src="http://i.imgur.com/8HRBMnm.jpg" height="600px" />
+
+---
+
+## Homework Review!
+
+* Anyone want to present their solution for the guessing game or destutter?
+
+---
+
+# Today's Goals
+
+1. Understand how to use Pry to make debugging/inspection easier
+2. Practice decomposing problems and modeling data with Hangman
+3. Learn Git/Github basics for new Homework Submission
+
+4. _(In review)_: Reinforce understanding of functions, arguments, and scope
+
+---
+
+# 1. Better Testing & Debugging w/ Pry
+
+1. `gem install pry` on the command line. Cool. Now you have pry.
+
+--
+
+2. You can use it by running pry on the command line instead of irb.
+
+--
+
+3. Other than having tab-completion, syntax highlighting, and awesome commands
+   like `ls`, `whereami` and `wtf`, we'll see next week it allows searching
+   for methods, reading docs, and more.
+
+--
+
+4. But most importantly, you can put `require 'pry'` at the top of your ruby file
+   and `binding.pry` in the place you want to debug or see what's happening and
+   when your program reaches that point in execution, a shell will automatically open!
+   No more annoying copying and pasting into IRB!
+
+---
+
+# 2. Let's Write Hangman!
+
+* One of the first substantive scripts I wrote was a terminal version of Hangman back in 2008.
+* Let's look at my old code and then write a better version!
+* It's written in a language called "Common Lisp". Stay calm. :D
+
+--
+
+There are three big takeaways to look for:
+
+--
+
+1. Even though we don't understand the language, we can pick up the high level structure.
+   Things like function calling, parameter passing, arrays are not so different!
+
+--
+
+2. A better design is generally better in *any* language.
+
+--
+
+3. If we can enforce a rule (aka **invariant**) by what data structures we use, that is almost always a good choice.
+
+---
+
+# 2. Moar hangman ...
+
+A design process:
+
+* Determine data requirements
+* Create abstract description
+
+--
+
+Options for how to start:
+
+* Pick the hardest thing first
+* Pick the best understood thing first
+
+--
+
+## What's hard about hangman?
+
+2 main things:
+
+* Deciding if the game is over
+* Figuring out the half-completed word
+
+Maybe also input validation but we'll save that for later. ;)
+
+---
+
+# 3. Git and Github
+
+[Reference Notes][git-notes]
+
+## Git
+
+* What is a repository?
+* What is a commit?
+* How do we create a repo, track file(s), change file(s), check status, view log, push?
+
+## Github
+
+* Makes it easier to collaborate. Social networks for nerds woo.
+* Also allows us to track bugs with "Issues".
+  Will be assigning issues for all homework going forward.
+* Github repos are "remotes" or copies of our local repos. We need to keep them in sync.
+* Github gets much more interesting once we start doing group work. 
+
+[git-notes]: https://github.com/TIY-ATL-ROR-2015-Sep/lectures/wk01-ruby-basics/tue/git.md
+
+---
+
+# New Homework Submission
+
+* I'll open an "Issue" on github for each of you that links to the
+  homework description and assign the issue to you.
+
+* When you're done, push your code to github, leave a link to it in the issue
+  and close it.
+
+---
+
+# Tonight's Homework
+
+### [Happy Hacking!][homework]
+
+.center[![computer_doge](http://40.media.tumblr.com/tumblr_m12hieqxHq1rrgr1no1_500.jpg)]
+
+[homework]: https://github.com/TIY-ATL-ROR-2015-Sep/lectures/blob/master/wk01-ruby/tue/questions.md
+
+---
+
+### (Review)
+
+# Functions and Argument Passing
+
+Function definition:
+
+```
+def test(stuff)
+  stuff.do_things
+end
+
+def foo(x)
+  result = x.bar.baz
+  test(result)
+end
+```
+
+Function call:
+
+```
+my_variable = 52
+foo(my_variable)
+```
