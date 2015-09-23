@@ -1,4 +1,5 @@
 require "pry"
+require "set"
 
 word_list = [
   "chicken", "duck", "dog", "cat", "clown",
@@ -8,7 +9,7 @@ word_list = [
   "chicanery"
 ]
 
-turn_count = 6
+MAX_TURNS = 6
 answer = word_list.sample
 
 def greeting
@@ -17,21 +18,27 @@ def greeting
   puts "Just guess letters dummy."
 end
 
-def game_over?(turn_count, answer, guesses)
-  ## TODO
-  binding.pry
+def game_over?(answer, guesses)
+  turns_left(guesses, answer).zero? || win?(answer, guesses)
 end
 
-def show_progress(turn_count, partial_word)
+def show_progress(partial_word, answer, guesses)
+  turns_remaining = turns_left(guesses, answer)
   puts
   puts "The current word is: #{partial_word}"
-  puts "You have #{turn_count} guesses left."
+  puts "You have #{turns_remaining} guesses left."
 end
 
 def prompt_player
   puts
   puts "Please guess a letter: "
-  gets.chomp
+  letter = gets.chomp
+
+  until ('a'..'z').to_a.include?(letter)
+    puts "#{letter} is not a single lowercase letter. Please guess again: "
+    letter = gets.chomp
+  end
+  letter
 end
 
 def make_partial(guesses, answer)
@@ -40,27 +47,21 @@ def make_partial(guesses, answer)
     if guesses.include?(letter)
       letter
     else
-      " "
+      "-"
     end
   end
 end
 
-def take_turn(turn_count, guesses, answer)
+def take_turn(guesses, answer)
   partial_word = make_partial(guesses, answer).join
-  show_progress(turn_count, partial_word)
+  show_progress(partial_word, answer, guesses)
   prompt_player
 end
 
 def win?(answer, guesses)
-  answer.chars.all? do |character|
-    guesses.include?(character)
-  end
-
-  # winner = true
-  # answer.chars.each do |letter|
-  #   winner = false unless guesses.include?(letter)
-  # end
-  # winner
+  answer_set = answer.chars.to_set
+  # guesses.superset?(answer_set)
+  guesses >= answer_set
 end
 
 def postmortem(answer, guesses)
@@ -71,15 +72,40 @@ def postmortem(answer, guesses)
   end
 end
 
-def hangman(answer, turn_count)
-  guesses = []
+def turns_left(guesses, answer)
+  answer_set = answer.chars.to_set
+  wrong_guesses = (guesses - answer_set).count
+  # wrong_guesses = guesses.difference(answer_set).count
+  MAX_TURNS - wrong_guesses
+end
+
+def hangman(answer)
+  guesses = Set.new
   greeting
-  until game_over?
-    guess = take_turn(turn_count, guesses, answer)
-    guesses.push(guess)
-    turn_count -= 1 unless answer.include?(guess)
+  until game_over?(answer, guesses)
+    guess = take_turn(guesses, answer)
+    guesses.add(guess)
   end
   postmortem(answer, guesses)
 end
 
-hangman(answer, turn_count)
+def play_again?
+  puts "Would you like to play again? (y/n)"
+  gets.chomp
+end
+
+def play_hangman(words)
+  answer = words.sample
+  hangman(answer)
+end
+
+def play(words)
+  play_hangman(words)
+  choice = play_again?
+  until choice == "n"
+    play_hangman(words)
+    choice = play_again?
+  end
+end
+
+play(word_list)
