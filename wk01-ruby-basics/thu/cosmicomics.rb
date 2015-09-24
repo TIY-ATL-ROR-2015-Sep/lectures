@@ -14,7 +14,7 @@ end
 
 def join_words(word1, word2)
   # Join all of word1 with all but the first letter of word2
-  word1 + word2[1, -1]
+  word1 + word2[1..-1]
 end
 
 binding.pry
