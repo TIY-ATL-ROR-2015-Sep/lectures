@@ -14,9 +14,7 @@
 
 1. Understand how to use Pry to make debugging/inspection easier
 2. Practice decomposing problems and modeling data with Hangman
-3. Learn Git/Github basics for new Homework Submission
-
-4. _(In review)_: Reinforce understanding of functions, arguments, and scope
+3. Reinforce understanding of functions, arguments, and scope
 
 ---
 
@@ -92,38 +90,6 @@ Options for how to start:
 * Figuring out the half-completed word
 
 Maybe also input validation but we'll save that for later. ;)
-
----
-
-# 3. Git and Github
-
-[Reference Notes][git-notes]
-
-## Git
-
-* What is a repository?
-* What is a commit?
-* How do we create a repo, track file(s), change file(s), check status, view log, push?
-
-## Github
-
-* Makes it easier to collaborate. Social networks for nerds woo.
-* Also allows us to track bugs with "Issues".
-  Will be assigning issues for all homework going forward.
-* Github repos are "remotes" or copies of our local repos. We need to keep them in sync.
-* Github gets much more interesting once we start doing group work. 
-
-[git-notes]: https://github.com/TIY-ATL-ROR-2015-Sep/lectures/wk01-ruby-basics/tue/git.md
-
----
-
-# New Homework Submission
-
-* I'll open an "Issue" on github for each of you that links to the
-  homework description and assign the issue to you.
-
-* When you're done, push your code to github, leave a link to it in the issue
-  and close it.
 
 ---
 

@@ -13,8 +13,9 @@ Would anyone like to present their completed Hangman?
 # Today's Goals
 
 * Gain an appreciation for why we choose data structures/collections
-* Understand how to perform File I/O
 * Understand some basic ideas about performance
+* Understand how to perform File I/O
+* See some basic usage of Git
 
 ---
 
@@ -109,7 +110,11 @@ and having at least a surface understanding of its implications.
 
 1. We determine the speed of an algorithm by determining how quickly the amount of work *grows* based on the size of the data. There is a formal system for describing these growth rates that we won't cover known as [Big-O notation][big-o].
 
+--
+
 2. Humans have terrible intuition for the performance of software. **Never** guess which part is slow and start tweaking. Measure with a profiler or other tools for doing statistical performance evaluation.
+
+--
 
 3. "Premature optimization is the root of all evil." - Donald Knuth
    > I.e. Correctness and maintainability absolutely come first.
@@ -138,8 +143,39 @@ Just minor notes here.
 
 ---
 
+
+# Git and Github
+
+[Reference Notes][git-notes]
+
+## Git
+
+* What is a repository?
+* What is a commit?
+* How do we create a repo, track file(s), change file(s), check status, view log, push?
+
+## Github
+
+* Makes it easier to collaborate. Social networks for nerds woo.
+* Also allows us to track bugs with "Issues".
+  Will be assigning issues for all homework going forward.
+* Github repos are "remotes" or copies of our local repos. We need to keep them in sync.
+* Github gets much more interesting once we start doing group work. 
+
+[git-notes]: https://github.com/TIY-ATL-ROR-2015-Sep/lectures/wk01-ruby-basics/wed/git.md
+
+---
+
+# New Homework Submission
+
+* I'll open an "Issue" on github for each of you that links to the
+  homework description and assign the issue to you.
+
+* When you're done, push your code to github to a repo you create,
+  leave a link to it in the issue and close it.
+
+---
+
 # Homework
-
-
 
 [homework]: https://github.com/TIY-ATL-ROR-2015-Sep/lectures/blob/master/wk01-ruby/wed/questions.md
