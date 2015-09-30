@@ -24,11 +24,16 @@ class HumanPlayerTests < MiniTest::Test
     refute @player.valid_guess?("cookies")
     refute @player.valid_guess?("A")
     refute @player.valid_guess?("!")
+    refute @player.valid_guess?("42")
   end
 
   def test_can_get_guess
-    @player.stub :get_input, "c" do
-      assert_equal @player.get_guess, "c"
+    valid_input = ('a' .. 'z').to_a
+    100.times do
+      guess = valid_input.sample
+      @player.stub :get_input, guess do
+        assert_equal @player.get_guess, guess
+      end
     end
   end
 end
