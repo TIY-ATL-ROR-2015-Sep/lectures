@@ -19,9 +19,17 @@ class HumanPlayerTests < MiniTest::Test
     assert_equal @player.name, "The Nameless One"
   end
 
+  def test_can_validate_guess
+    assert @player.valid_guess?("a")
+    refute @player.valid_guess?("cookies")
+    refute @player.valid_guess?("A")
+    refute @player.valid_guess?("!")
+  end
+
   def test_can_get_guess
-    skip
-    player = HumanPlayer.new
+    @player.stub :get_input, "c" do
+      assert_equal @player.get_guess, "c"
+    end
   end
 end
 
