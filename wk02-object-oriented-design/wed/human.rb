@@ -9,7 +9,7 @@ class HumanPlayer
 
   def get_guess
     guess = get_input
-    until valid_guess?(guess) 
+    until valid_guess?(guess)
       guess = get_input
     end
     guess
@@ -22,6 +22,6 @@ class HumanPlayer
   private
   def get_input
     puts "Please guess a letter: "
-    gets.chomp.downcase    
+    gets.chomp.downcase
   end
 end
