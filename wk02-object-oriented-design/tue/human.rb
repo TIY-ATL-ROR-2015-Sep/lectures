@@ -1,5 +1,5 @@
 class HumanPlayer
-  def get_guess
+  def get_guess(last_result)
     puts "Please guess a number: "
     guess = gets.chomp.to_i
     until guess != 0
