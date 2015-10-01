@@ -6,6 +6,13 @@ class Human
   def alertness
     0.0
   end
+
+  def has_coffee?
+  end
+
+  def needs_coffee?
+    true
+  end
 end
 
 
