@@ -1,3 +1,4 @@
+require './player'
 require './human'
 require './random'
 
@@ -41,5 +42,15 @@ end
 class RandomPlayerTests < MiniTest::Test
   def test_can_build_player
     assert RandomPlayer.new
+    assert RandomPlayer.new("Rando Calrissian")
+  end
+
+  def test_only_returns_valid_guesses
+    player = RandomPlayer.new
+    100.times do
+      guess = player.get_guess
+      alphabet = ('a'..'z').to_a
+      assert_includes(alphabet, guess)
+    end
   end
 end
