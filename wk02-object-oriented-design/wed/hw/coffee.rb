@@ -1,7 +1,7 @@
 class Coffee
   def initialize(name)
     @name = name
-    @full = true
+    @sips = 3
   end
 
   def name
@@ -9,13 +9,14 @@ class Coffee
   end
 
   def full?
-    @full
-  end
-
-  def slurp!
-    @full = false
+    @sips == 3
   end
 
   def empty?
+    @sips.zero?
+  end
+
+  def slurp!
+    @sips -= 1
   end
 end

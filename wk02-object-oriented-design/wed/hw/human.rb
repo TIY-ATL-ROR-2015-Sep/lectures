@@ -18,7 +18,7 @@ class Human
 
   def drink!
     @coffee.slurp!
-    puts "#{@coffee.name} is deliiiicious!"
+    # puts "#{@coffee.name} is deliiiicious!"
     @alertness = @alertness + 0.33
   end
 
