@@ -70,4 +70,12 @@ class DictionaryTest < MiniTest::Test
       assert word1 != word2
     end
   end
+
+  def test_only_return_valid_words
+    dict = Dictionary.new
+    100.times do
+      word = dict.random_word
+      assert_match(/^[a-z]{4,20}$/, word)
+    end
+  end
 end

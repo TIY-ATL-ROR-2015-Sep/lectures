@@ -2,7 +2,7 @@ class Dictionary
   def initialize
     @word_list = [
       "cookies", "monsters", "unicorns", "robots",
-      "skynet", "disaster", "back", "to", "the", "future",
+      "skynet", "disaster", "back", "future",
       "jurassic", "velociraptors", "tone", "chicken", "lunch",
       "gyros", "sleep", "coffee"
     ]
