@@ -1,13 +1,25 @@
 class Human
   def initialize(name)
     @name = name
+    @alertness = 0.0
+    @coffee = nil
   end
 
   def alertness
-    0.0
+    @alertness
   end
 
   def has_coffee?
+  end
+
+  def buy(coffee)
+    @coffee = coffee
+  end
+
+  def drink!
+    @coffee.slurp!
+    puts "#{@coffee.name} is deliiiicious!"
+    @alertness = @alertness + 0.33
   end
 
   def needs_coffee?
