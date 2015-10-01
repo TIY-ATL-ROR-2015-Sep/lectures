@@ -10,6 +10,7 @@ class Human
   end
 
   def has_coffee?
+    !@coffee.nil?
   end
 
   def buy(coffee)
