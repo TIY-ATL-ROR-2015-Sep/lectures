@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'pry'
 
 require './human'
 require './coffee'
@@ -21,11 +22,20 @@ class CaffeineTest < MiniTest::Test
     tsmf = Coffee.new "Triple Shot Mocha Frappuccino"
     assert tsmf.full?
 
-    sherri.buy tsmf
+    sherri.buy(tsmf)
     sherri.drink!
-    assert_within_epsilon sherri.alertness, 0.33, 0.1
+    assert_in_epsilon(sherri.alertness, 0.33, 0.1)
     refute tsmf.full?
     refute tsmf.empty?
+  end
+
+  def test_humans_have_coffee_after_buying_it
+    terri = Human.new "Terri"
+    cuban = Coffee.new "Cuban Stuff"
+
+    refute terri.has_coffee?
+    terri.buy(cuban)
+    assert terri.has_coffee?
   end
 
   def test_humans_can_drink_all_the_coffee
