@@ -1,3 +1,4 @@
+require './dictionary'
 require './player'
 require './human'
 require './random'
@@ -51,6 +52,22 @@ class RandomPlayerTests < MiniTest::Test
       guess = player.get_guess
       alphabet = ('a'..'z').to_a
       assert_includes(alphabet, guess)
+    end
+  end
+end
+
+class DictionaryTest < MiniTest::Test
+  def test_can_build_dictionary
+    dict = Dictionary.new
+    assert dict.is_a?(Dictionary)
+  end
+
+  def test_can_get_random_word
+    dict = Dictionary.new
+    1000.times do
+      word1 = dict.random_word
+      word2 = dict.random_word
+      assert word1 != word2
     end
   end
 end
