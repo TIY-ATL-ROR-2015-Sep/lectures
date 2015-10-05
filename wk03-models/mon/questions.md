@@ -31,7 +31,7 @@ A gist containing answers to the following questions and the command(s) you used
 * What are the 5 most expensive items?
 * What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)
 * Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
-* Correct Virginie Mitchell's address to "New York, NY, 10108".
+* Correct Virginie Mitchell's address to "New York, NY, 12345".
 * How many total items did we sell?
 * Simulate buying an item by inserting a User for yourself and an Order for that User.
 
