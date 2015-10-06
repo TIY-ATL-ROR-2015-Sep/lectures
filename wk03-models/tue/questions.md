@@ -1,4 +1,6 @@
-For tonight's assignment, you'll update the **hangr** project from class.
+For tonight's assignment, you'll update the [**hangr**][hangr] project from class.
+
+[hangr]: https://github.com/TIY-ATL-ROR-2015-Sep/hangr
 
 ## Setup
 
@@ -7,7 +9,8 @@ code to your labs repo, you'll "fork" the *hangr* code from the course
 organization page, and then "clone" your fork at the command line
 to get a local copy of the repo to edit.
 
-You'll also need to run `rake db:migrate` in your clone to setup the database.
+You'll need to run `bundle` in the project directory to get any needed
+libraries and `rake db:migrate` once to run the existing database migrations.
 
 ## Usage
 
