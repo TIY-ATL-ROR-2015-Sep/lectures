@@ -69,8 +69,8 @@ on the material around how Databases, SQL, and Joins work. Your primary
 references for how ActiveRecord or migrations work should be the above
 Rails Guides.
 
-[A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
-[What is a SQL Join?](http://www.sql-join.com/)
+* [A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+* [What is a SQL Join?](http://www.sql-join.com/)
 
 And finally, a very excellent blog series though it goes into far more detail
 than we will in this course. Note that in the 80s you could get a PhD in
@@ -79,5 +79,5 @@ stuff works. In particular, I would wager the "Introduction", "Basic SQL", and
 "More SQL" sections are pretty useful. If you want better mathematical
 intuitions around SQL, maybe read the "Relational Model" and "Relational Algebra" posts.
 
-[A Tiny Intro to Database Systems](http://blog.dancrisan.com/a-tiny-intro-to-database-systems)
+* [A Tiny Intro to Database Systems](http://blog.dancrisan.com/a-tiny-intro-to-database-systems)
 
