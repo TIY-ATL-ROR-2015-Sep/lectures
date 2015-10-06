@@ -1,46 +1,63 @@
-For tonight's assignment, you'll update the Guessr project from class.
+For tonight's assignment, you'll update the **hangr** project from class.
+
+## Setup
 
 This will differ from past assignments in that rather than adding more
-code to your labs repo, you'll "fork" the guessr code from the course
-organization page, and then "clone" your fork to get a local copy of
-the repo to edit.
+code to your labs repo, you'll "fork" the *hangr* code from the course
+organization page, and then "clone" your fork at the command line
+to get a local copy of the repo to edit.
 
-Note that you'll need to run `rake db:migrate` in your clone to get
-the database setup. To run the game just use `ruby lib/guessr.rb`
-from the root of your repository.
+You'll also need to run `rake db:migrate` in your clone to setup the database.
 
-**ADDENDUM**: We endured some migration bugs and git remote
-shenanigans in the course of getting our forks set up. Hooray for learning!
+## Usage
+
+To "run" the game, just run `bundle exec ruby lib/hangr.rb`.
+But, well, we haven't written it yet. So don't do that til tomorrow. :)
+
+To access the database, just run `sqlite3 db/hangr.db`.
+Remember that you can check the schema with `.schema` and that
+`SELECT * FROM schema_migrations ORDER BY version DESC LIMIT 1;`
+will get you the latest database version. :)
 
 ## Normal Mode
 
-There are 2 enhancements to make to guessr:
+3 items tonight:
 
-1. You'll increase the users score when they win a game.
-   You may use any scoring system you like.
-   I would recommend giving them points as follows:
-   100 - (10 * number of turns after the first)
+1. Add a migration for a games table and run/test it.
+   Then add a simple model for the Game as done with Player.
+2. Read selected portions of the [ActiveRecord Migration Guide][amg]
+   and the [ActiveRecord Querying Guide][aqg]. See below.
 
-   Note that the user's score is cumulative across games
-   so it should never decrease, only increase.
+### Migrations
 
-   This code should probably go in the `turn` method in `lib/guessr.rb`.
+Write a migration to add a games table, thinking carefully about what
+columns we might need for the games table.
 
-2. Add a scoreboard method to the Menu class and allow
-   the user to select displaying the scoreboard when they "login".
-   The scoreboard should rank the users from highest score to lowest.
-   Reading the [ActiveRecord Querying guide][querying] may prove helpful.
-   In particular, chapters 1-5 and 19 are worth a look.
+We should probably store at a minimum:
+* The player whose game it is.
+* Whether or not the game is over/finished.
+* The number of guesses taken.
+* The answer.
 
-   This code should probably go in the `Menu` class in `lib/guessr/menu.rb`.
+### Reading
 
-Additionally, reading the first chapter and the belongs_to, has_one,
-and has_many sections of the [ActiveRecord associations guide][associations]
-would provide good reinforcement of today's lecture material.
+These guides will be handy not only for the rest of class, but in
+your professional career using Rails. Remember to keep them handy/bookmarked!
+
+* The migrations guide is great but note there will be some minor differences
+  in how migrations are written as we can't use `rails g` yet.
+
+  Read Chapters 1, 5, and 8 of the guide.
+
+* The querying guide will give you an excellent introduction to how to use
+  ActiveRecord to work with the database. Feel free to try out various
+  examples using the Player and Games model we've built.
+
+  Read Chapters 1-6.
 
 ## Hard Mode
 
-Enhance the scoreboard to rank users by (total_score / games_played).
+Add some example data either from the sqlite prompt or by using a binding.pry
 
-[querying]: http://guides.rubyonrails.org/active_record_querying.html
-[associations]: http://guides.rubyonrails.org/association_basics.html
+[amg]: http://edgeguides.rubyonrails.org/active_record_migrations.html
+[aqg]: http://guides.rubyonrails.org/active_record_querying.html
