@@ -55,9 +55,26 @@ your professional career using Rails. Remember to keep them handy/bookmarked!
 
   Read Chapters 1-6.
 
-## Hard Mode
-
-Add some example data either from the sqlite prompt or by using a binding.pry
-
 [amg]: http://edgeguides.rubyonrails.org/active_record_migrations.html
 [aqg]: http://guides.rubyonrails.org/active_record_querying.html
+
+## SQL References
+
+**NOTE**: These aren't references about tonight's homework but rather
+useful points of reference for later in the course or for brushing up
+on the material around how Databases, SQL, and Joins work. Your primary
+references for how ActiveRecord or migrations work should be the above
+Rails Guides.
+
+[A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+[What is a SQL Join?](http://www.sql-join.com/)
+
+And finally, a very excellent blog series though it goes into far more detail
+than we will in this course. Note that in the 80s you could get a PhD in
+Databases and that there is a fair amount of academic theory behind how this
+stuff works. In particular, I would wager the "Introduction", "Basic SQL", and
+"More SQL" sections are pretty useful. If you want better mathematical
+intuitions around SQL, maybe read the "Relational Model" and "Relational Algebra" posts.
+
+[A Tiny Intro to Database Systems](http://blog.dancrisan.com/a-tiny-intro-to-database-systems)
+
