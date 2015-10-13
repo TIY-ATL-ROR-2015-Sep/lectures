@@ -5,6 +5,9 @@
 Work in pairs to write two classes for interacting with
 the "pull requests" and "issues" features of the Github API.
 
+The classes and the responsibility of each pair is detailed
+[here](https://gist.github.com/kingcons/2f225d174a3e84d75ad9).
+
 Open a pull request to have your changes merged
 into master on the original repo.
 
