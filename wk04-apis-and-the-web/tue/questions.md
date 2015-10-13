@@ -33,18 +33,19 @@ After completing this assignment, you be able to effectively use
 
 ### Normal Mode
 
-3 steps here...
+4 steps here...
 
+1. Write a class to access the API as described in the above gist.
 
-1. Merge the open pull requests with today's code into master.
+2. Merge the open pull requests with today's code into master.
 
    You are likely to encounter difficulty merging aka
    "merge conflicts". Consult Rickard or I for help!
 
-2. Once both pull requests are merged, return to the master
+3. Once both pull requests are merged, return to the master
    branch with `git checkout master`.
 
-3. Get your master branch up to date with is on github.
+4. Get your master branch up to date with is on github.
 
    If you are the owner of the *original repo*, getting master up
    to date is as simple as running `git pull origin master`.
