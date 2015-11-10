@@ -16,21 +16,27 @@ with a button to "turn on" the Travis CI testing for each one.
 
 ## Normal Mode
 
+Start by adding the Travis CI badge to your README.md by simply including 
+a line like the following `[![Build Status](https://travis-ci.org/YOUR-USER-NAME/YOUR-REPO-NAME.svg?branch=master)](http://travis-ci.org/YOUR-USER-NAME/YOUR-REPO-NAME)`
+
+Once the README for your project displays "Build Passing", your work is complete!
+
 Your assignment is to update *your fork* of the reddit project with a
 `.travis.yml` file, add at least one test for the Link model and one
 for the User model, then flip the toggle on Travis CI and add the
 Travis CI badge to your README! :)
 
 Here is an example [`.travis.yml` file][travis-rails] that you can feel
-free to use in your project. I'm happy to explain details of it if you
-have questions.
+free to use in your project. You **will need** to tweak the database name
+in the `before_script` section to match your test database name.
+I'm happy to explain details if you have questions.
 
-You need to make sure there is a test database before you can run tests
-and that it is listed in the `test:` section of your `config/database.yml` file!
+Speaking of, you need to make sure there is a test database before you can run the tests!
+The test database name should be in the `test:` section of your `config/database.yml`.
 Remember that if the database hasn't been created on your computer you can create it
 with `createdb your-db-name`.
 
-Finally, you can run any tests you write with ...
+You can run any tests you write with ...
 
     RAILS_ENV=test bundle exec rake db:migrate test``
 
