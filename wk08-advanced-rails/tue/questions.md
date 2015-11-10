@@ -27,14 +27,9 @@ for the User model, then flip the toggle on Travis CI and add the
 Travis CI badge to your README! :)
 
 Here is an example [`.travis.yml` file][travis-rails] that you can feel
-free to use in your project. You **will need** to tweak the database name
-in the `before_script` section to match your test database name.
-I'm happy to explain details if you have questions.
+free to use in your project. I'm happy to explain details if you have questions.
 
-Speaking of, you need to make sure there is a test database before you can run the tests!
 The test database name should be in the `test:` section of your `config/database.yml`.
-Remember that if the database hasn't been created on your computer you can create it
-with `createdb your-db-name`.
 
 You can run any tests you write with ...
 
