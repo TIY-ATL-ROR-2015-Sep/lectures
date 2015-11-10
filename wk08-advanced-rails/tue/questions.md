@@ -28,8 +28,13 @@ Travis CI badge to your README! :)
 
 Here is an example [`.travis.yml` file][travis-rails] that you can feel
 free to use in your project. I'm happy to explain details if you have questions.
+You can take out the `before_script` if your reddit app is using sqlite3 instead
+of postgresql. If you *are* using postgresql, you need to simply tweak the database
+name in the `before_script`.
 
 The test database name should be in the `test:` section of your `config/database.yml`.
+Note that if you're using postgresql and have *not* created the database you will
+need to run: `createdb my-database`.
 
 You can run any tests you write with ...
 
