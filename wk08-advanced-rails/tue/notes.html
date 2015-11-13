@@ -107,17 +107,16 @@ Sign up! Cancel it anytime you want.
 1. Add the `aws-sdk-v1` and `foreman` gems to the gemfile to
    interact with S3 and manage our environment variables, respectively.
 2. Create a testing bucket and a production bucket for your project in your S3 account.
-2. Add `S3_BUCKET`, `S3_BUCKET_TEST`, `AWS_ACCESS_KEY`, and `AWS_SECRET_KEY` to `.env`.
-3. Mirror the changes to `.env` on heroku via `heroku config:set FOO=bar`.
-4. Configure paperclip settings in `config/environments/production.rb`
-   and `config/environments/development.rb` based on the above variables
-   as seen in [le Heroku guide][heroku-paper-config].
+3. Add `S3_BUCKET`, `S3_BUCKET_TEST`, `AWS_ACCESS_KEY`, and `AWS_SECRET_KEY` to `.env`.
+4. Mirror the changes to `.env` on heroku via `heroku config:set FOO=bar`.
+5. Configure paperclip settings in your `config/environments/foo.rb` files
+   based on the examples in [le Heroku guide][heroku-paper-config].
 
    It's recommended to also set the `url` and `path` options in
    `config/initializers/paperclip.rb` as shown [here][heroku-initializers] in the Heroku guide.
 
    If you don't you may get confusing 500 errors as shown [here][paperclip-gotcha]!
-5. Don't forget to add `.env` to your `.gitignore` and start rails with `foreman start`!
+6. Don't forget to add `.env` to your `.gitignore` and start rails with `foreman start`!
 
 We're done!
 
@@ -127,5 +126,5 @@ We're done!
 
 ## Tomorrow
 
-Invites, downloading files from S3, and twilio!
+Invites, Twilio, and downloading files!
  </textarea> <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"> </script> <script> var slideshow = remark.create(); </script> </body> </html>
