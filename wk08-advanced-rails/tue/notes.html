@@ -113,9 +113,8 @@ Sign up! Cancel it anytime you want.
    based on the examples in [le Heroku guide][heroku-paper-config].
 
    It's recommended to also set the `url` and `path` options in
-   `config/initializers/paperclip.rb` as shown [here][heroku-initializers] in the Heroku guide.
-
-   If you don't you may get confusing 500 errors as shown [here][paperclip-gotcha]!
+   `config/initializers/paperclip.rb` as shown [here][heroku-initializers] in the Heroku guide
+   to avoid the errors described in [this blog post][paperclip-gotcha]!
 6. Don't forget to add `.env` to your `.gitignore` and start rails with `foreman start`!
 
 We're done!
