@@ -104,20 +104,26 @@ Sign up! Cancel it anytime you want.
 
 ### Now add a Ruby S3 Library
 
-1. Add the `aws-sdk` gem to the gemfile to interact with S3
-   and other Amazon Web Services.
-2. Add `S3_BUCKET`, `AWS_ACCESS_KEY`, and `AWS_SECRET_ACCESS_KEY` to `.env`.
-3. Add an initializer to setup the AWS gem based on those values.
-4. Mirror the changes to `.env` on heroku via `heroku config:set FOO=bar`.
-5. Add some paperclip settings to `config/environments/production.rb`
+1. Add the `aws-sdk-v1` and `foreman` gems to the gemfile to
+   interact with S3 and manage our environment variables, respectively.
+2. Create a testing bucket and a production bucket for your project in your S3 account.
+2. Add `S3_BUCKET`, `S3_BUCKET_TEST`, `AWS_ACCESS_KEY`, and `AWS_SECRET_KEY` to `.env`.
+3. Mirror the changes to `.env` on heroku via `heroku config:set FOO=bar`.
+4. Configure paperclip settings in `config/environments/production.rb`
+   and `config/environments/development.rb` based on the above variables
    as seen in [le Heroku guide][heroku-paper-config].
-6. You should probably mirror them locally in
-   `config/environments/development.rb`
-   so we can test without deploying to Heroku. :)
+
+   It's recommended to also set the `url` and `path` options in
+   `config/initializers/paperclip.rb` as shown [here][heroku-initializers] in the Heroku guide.
+
+   If you don't you may get confusing 500 errors as shown [here][paperclip-gotcha]!
+5. Don't forget to add `.env` to your `.gitignore` and start rails with `foreman start`!
 
 We're done!
 
+[heroku-initializers]: https://devcenter.heroku.com/articles/paperclip-s3#international-users-additional-configuration
 [heroku-paper-config]: https://devcenter.heroku.com/articles/paperclip-s3#configuration
+[paperclip-gotcha]: http://blog.paulrugelhiatt.com/rails/paperclip/s3/2014/11/15/paperclip-and-s3-PermanentRedirect-the-bucket-you-are-attempting-to-access.html
 
 ## Tomorrow
 
