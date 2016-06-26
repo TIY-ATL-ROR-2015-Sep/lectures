@@ -61,7 +61,7 @@ end
 def finito(player, board)
   show_board(board)
   if win?(board)
-    puts "The game is over. #{switch_player(player)} won!"
+    puts "The game is over. #{player} won!"
   else
     puts "The game is a draw. Maybe we should stop playing tic tac toe."
   end
@@ -73,7 +73,7 @@ def tic_tac_toe
   until game_over?(board)
     move = take_turn(board, player)
     board[move - 1] = player
-    player = switch_player(player)
+    player = switch_player(player) unless game_over?(board)
   end
   finito(player, board)
 end
